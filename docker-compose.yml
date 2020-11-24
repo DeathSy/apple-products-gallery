@@ -6,7 +6,7 @@ services:
       context: ./web
       dockerfile: dev.Dockerfile
     volumes:
-      - ./web:/app
+      - ./web:/app:cached
       - /app/node_modules
     links:
       - "api"
@@ -25,7 +25,7 @@ services:
       context: ./api
       dockerfile: dev.Dockerfile
     volumes:
-      - ./api:/app
+      - ./api:/app:cached
       - /app/node_modules
     links:
       - "mongodb"
